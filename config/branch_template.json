@@ -1,0 +1,51 @@
+
+{
+
+	"workdir": "/<locationtoseed>/jenkins_seed/",
+
+	"_comment": "url trigger [cron job][label]",
+	"jenkinsurltriggers": ["* 0 * 0 *", "master"],
+
+	"_comment": "gitarguments [name][git url] [credentials] [label]",
+	"gitarguments": ["product","<git repo>","Product_Seed","*/<branchname>"],
+
+	"_comment": "",
+	"includepatterns": "<enter the patters to include. same as mentioned in Jenkins Job>",
+
+	"targetDirectory": "",
+
+	"fingerprintartifacts": "true",
+	"lastsuccessful": "true",
+
+	"_comment": "timeoutarguments [timeout][description]",
+	"timeoutarguments": ["120","Build timeout after 120 seconds"],
+
+	"_comment": "archiveartifacts var1,var2,var3",
+	"archiveartifacts": "",
+
+	"_comment": "plotcolumnargs [plotparam1][plotparam2]",
+	"plotcolumnargs": ["Memory_Usage","csvfile"],
+
+	"_comment": "plotargs1 [plotparam1][plotparam2][plotparam3][plotparam4][param5][param6]",
+	"plotargs1": ["MemoryUsage","line","size [bytes]","100","csv file name","MemoryUsage"],
+
+	"_comment": "plotargs1 [plotparam1][plotparam2][plotparam3][plotparam4][param5][param6]",
+	"plotargs2": ["","","","","",""],
+
+	"_comment": "environmentVariables  Param1,Param2",
+	"environmentVariables ": "/home/<scriptlocation>/release.properties",
+
+	"_comment": "includecolumns Param1,Param2",
+	"includecolumns": "NULL",
+
+	"_comment": "script file",
+	"shellscript": "build.sh",
+
+	"_comment": "downstream jobs",
+	"downstream": ["Regression","Performance"],
+
+
+	"_comment": "archiveJunit Param1",
+	"archiveJunit": ["NULL"]
+
+}
